@@ -1,0 +1,17 @@
+package day7;
+
+import java.util.ArrayList;
+
+public class AcornService {
+	
+	public ArrayList<Acorn> getMemberListTMP(){
+		
+		ArrayList<Acorn> list=new ArrayList<>();
+		
+		
+		return null;
+		
+	}
+	
+	
+}

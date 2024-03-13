@@ -1,0 +1,81 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+     <%@  page import="java.sql.*" %>   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section> 	
+
+<table>
+	
+	<tr>
+	<td>챔피언이름</td>
+	<td>가격</td>
+	<td>라인</td>
+	<td>난이도</td>
+	<td>역할</td>
+	</tr>
+	
+	<!--   -->
+	
+<%
+String driver = "oracle.jdbc.driver.OracleDriver";
+String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+String user = "scott";
+String password = "tiger";	
+
+		
+try {
+	 
+	Class.forName(driver);	 
+	Connection  con = DriverManager.getConnection(url, user, password);
+	
+	 
+ 
+	String sql  ="select * from rank1 order by tier asc";
+	PreparedStatement  pst =con.prepareStatement(sql);
+ 
+	
+	//5.실행 ( executeQuery()-조회,  executeUpdate()- 나머지 등록, 변경, 삭제)
+	ResultSet  rs =pst.executeQuery();	
+	
+	//
+	while( rs.next()) {		
+
+%>	
+	<tr>
+	<td> <%= rs.getString(1) %></td>
+	<td> <%= rs.getString(2) %></td>
+	<td> <%= rs.getString(3) %></td>
+	<td> <%= rs.getString(4) %></td>
+	<td> <%= rs.getString(5) %></td>
+	</tr>
+	
+<%
+
+	} 			
+	
+} catch (ClassNotFoundException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+} catch (SQLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+%>	
+	
+	
+</table>	
+	
+	
+	
+	
+	
+
+</section>
+</body>
+</html>

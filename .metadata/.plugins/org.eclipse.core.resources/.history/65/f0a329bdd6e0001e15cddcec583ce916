@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+table{
+	border:1px solid bblack;
+	width:600px;
+	margin:0 auto;
+	border-collapse:collapse;
+}
+td{
+	border:1px solid black;
+}
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td>아이디</td>
+<td>비번</td>
+<td>이름</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+</body>
+</html>

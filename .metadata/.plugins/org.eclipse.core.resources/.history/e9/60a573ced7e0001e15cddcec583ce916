@@ -1,0 +1,7 @@
+package day7;
+
+public class Acorn {
+	String id;
+	String pw;
+	String name;
+}

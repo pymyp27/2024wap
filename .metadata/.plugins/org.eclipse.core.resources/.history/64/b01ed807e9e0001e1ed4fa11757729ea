@@ -1,0 +1,37 @@
+package day7;
+
+import java.util.ArrayList;
+
+import dao.Customer;
+
+public class AcornService {
+	AcornDAO dao=new AcornDAO();
+	
+	public ArrayList<Acorn> getMemberListTMP(){
+		
+		ArrayList<Acorn> list=new ArrayList<>();
+		list.add(new Acorn("kij","1234","강지훈"));
+		list.add(new Acorn("gy","5678","김기엽"));
+		list.add(new Acorn("sjin","4568","김수진"));
+		return list;
+		
+	}
+	public void  registerMember( Acorn acorn ) {		
+		dao.insertMember(acorn);
+	}
+	public ArrayList<Acorn> getMemberListReal(){
+		
+		ArrayList<Acorn>list=dao.selectAll();
+		return list;
+		
+		
+	}
+	public static void main(String[] args) {
+		AcornService service=new AcornService();
+		ArrayList<Acorn> list= service.getMemberListReal();
+		
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i));
+		}
+	}
+}

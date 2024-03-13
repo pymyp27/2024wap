@@ -1,0 +1,109 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+        
+ <%@  page import="java.sql.*" %>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ table{ 
+  width:600px;
+  border:1px solid black;
+  border-collapse: collapse;
+  
+  margin: 0 auto;
+ }
+ 
+ td{
+ border:1px solid black;
+ text-align: center;
+ } 
+ 
+</style>
+</head>
+<body>
+    <section>
+        <form method="get" action="">
+            <input type="text" name="search" placeholder="챔피언 이름을 입력하세요">
+            <input type="submit" value="검색">
+        </form>
+        </section>
+
+
+<section> 	
+
+<table>
+	
+	<tr>
+	<td>챔피언이름</td>
+	<td>가격</td>
+	<td>라인</td>
+	<td>난이도</td>
+	<td>역할</td>
+	</tr>
+	
+	<!--   -->
+	
+<%
+String driver = "oracle.jdbc.driver.OracleDriver";
+String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+String user = "scott";
+String password = "tiger";	
+
+	
+//변수지정
+
+request.setCharacterEncoding("utf-8");
+String search  = request.getParameter("search");
+try {
+	 
+	Class.forName(driver);	 
+	Connection  con = DriverManager.getConnection(url, user, password);
+	
+	 
+ 
+	String sql  ="SELECT * FROM qwer WHERE 이름 LIKE ? ";
+	
+	PreparedStatement  pst =con.prepareStatement(sql); 
+	
+	pst.setString(1, search);
+	ResultSet  rs =pst.executeQuery();	
+	
+	//
+	while( rs.next()) {		
+
+%>	
+	<tr>
+	<td> <%= rs.getString(1) %></td>
+	<td> <%= rs.getString(2) %></td>
+	<td> <%= rs.getString(3) %></td>
+	<td> <%= rs.getString(4) %></td>
+	<td> <%= rs.getString(5) %></td>
+	</tr>
+	
+<%
+
+	} 			
+	
+} catch (ClassNotFoundException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+} catch (SQLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+%>	
+	
+	
+</table>	
+	
+	
+	
+	
+	
+
+</section>
+</body>
+</html>
