@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.todoList{
+		width: 430px;
+		border: 1px solid black;
+		margin: 0px auto;
+	}
+	.todoItem{
+		width:100%;
+		border: 1px soild black;
+		display: flex;
+	}
+	.todoItem div{
+		border: 1px soild green;
+	}
+	.check_col{
+		width: 10%;
+	}
+	.todo_col{
+		width: 70%;
+	}
+	.del_col{
+		width: 20%;
+	}
+	.del_col button{
+		width: 100%;
+		height: 30px;
+	}
+</style>
+</head>
+<body>
+	<div class="todoList">
+		<h4>todo List</h4>
+		<div class="search"></div>
+		<div class="itemWarap">
+			<div class="todoItem">
+				<div class="check_col"><input type="checkbox"> </div>
+				<div class="todo_col"></div>
+				<div class="del_col"><button>삭제</button> </div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

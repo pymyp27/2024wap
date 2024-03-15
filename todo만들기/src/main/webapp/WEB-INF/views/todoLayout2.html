@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.wrap{
+		width: 500px;
+		padding:10px;
+		border: 1px solid black;
+		
+		box-sizing: border-box;
+	}
+	.header{
+		width: 400px;
+		
+		border: 1px solid black;
+		
+		margin: 10px auto;
+		padding: 30px;
+		box-sizing: border-box;
+		background-color: gainsboro;
+		border-radius: 5px;
+		text-align: center;
+	}
+	.todoEdit{
+		width: 450px;
+		border: 1px solid black;
+		margin: 20px auto;
+	}
+	.todoEditwrap{
+		width:100%;
+		border: 1px solid black;
+		display: flex;
+	}
+	.todo_col{
+		width:80%;
+		border: 1px solid black;
+	}
+	.reg_col{
+		width:20%;
+		border: 1px solid black;
+	}
+	.todo_col input{
+	width: 80%;
+	margin-top: 20px;
+	border: none;
+	outline: none;
+	height: 30px;
+	}
+	.reg_col button{
+	width: 100%;
+	height: 54px;
+	}
+	.todoList{
+		width: 430px;
+		border: 1px solid black;
+		margin: 0px auto;
+	}
+	.todoItem{
+		width:100%;
+		border: 1px soild black;
+		display: flex;
+	}
+	.todoItem div{
+		/*border: 1px soild green;*/
+	}
+	.check_col{
+		width: 10%;
+	}
+	.ceon_col{
+		width: 70%;
+	}
+	.del_col{
+		width: 20%;
+	}
+	.del_col button{
+		width: 100%;
+		height: 30px;
+		border: none;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+	
+			<div class="header">
+				<h4>오늘은😊</h4>
+				<div>날짜</div>
+			</div>
+		
+			<div class="todoEdit">
+		<h4>새로운 todo 작성하기🖊️</h4>
+		<div class="todoEditwrap">
+			<div class="todo_col"><input type="text"> </div>
+			<div class="reg_col"><button>버튼</button> </div>
+		</div>
+		
+	<div class="todoList">
+		<h4>todo List</h4>
+		<div class="search"></div>
+		<div class="itemWarap">
+			<div class="todoItem">
+				<div class="check_col"><input type="checkbox"> </div>
+				<div class="ceon_col"></div>
+				<div class="del_col"><button>삭제</button> </div>
+			</div>
+		</div>
+		
+	</div>
+	</div>
+</body>
+</html>
